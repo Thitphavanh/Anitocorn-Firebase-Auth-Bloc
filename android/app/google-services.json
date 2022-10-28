@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1084958856293",
+    "project_id": "anitocorn-firebase-auth-bloc",
+    "storage_bucket": "anitocorn-firebase-auth-bloc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084958856293:android:2aaf99340ffe213758228c",
+        "android_client_info": {
+          "package_name": "com.anitocorn.anitocorn_firebase_auth_bloc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084958856293-7ot2c5f4rsudo52vki8s14jllegchgnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9gNNbiflBaNdee5BUSWsdMu_2Vbe81wA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084958856293-7ot2c5f4rsudo52vki8s14jllegchgnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
