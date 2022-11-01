@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'blocs/auth.dart';
+import 'blocs/signup/signup_cubit.dart';
 import 'firebase_options.dart';
 import 'pages/pages.dart';
 
@@ -37,8 +38,13 @@ class MyApp extends StatelessWidget {
               authRepository: context.read<AuthRepository>(),
             ),
           ),
-           BlocProvider<SigninCubit>(
+          BlocProvider<SigninCubit>(
             create: (context) => SigninCubit(
+              authRepository: context.read<AuthRepository>(),
+            ),
+          ),
+          BlocProvider<SignupCubit>(
+            create: (context) => SignupCubit(
               authRepository: context.read<AuthRepository>(),
             ),
           ),
