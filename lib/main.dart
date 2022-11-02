@@ -1,3 +1,4 @@
+import 'package:anitocorn_firebase_auth_bloc/blocs/profile/profile_cubit.dart';
 import 'package:anitocorn_firebase_auth_bloc/repositories/auth_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -8,6 +9,7 @@ import 'blocs/auth.dart';
 import 'blocs/signup/signup_cubit.dart';
 import 'firebase_options.dart';
 import 'pages/pages.dart';
+import 'repositories/repositories.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,6 +32,11 @@ class MyApp extends StatelessWidget {
             firebaseAuth: FirebaseAuth.instance,
           ),
         ),
+        RepositoryProvider<ProfileRepository>(
+          create: (context) => ProfileRepository(
+            firebaseFirestore: FirebaseFirestore.instance,
+          ),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -48,6 +55,11 @@ class MyApp extends StatelessWidget {
               authRepository: context.read<AuthRepository>(),
             ),
           ),
+          BlocProvider<ProfileCubit>(
+            create: (context) => ProfileCubit(
+              profileRepository: context.read<ProfileRepository>(),
+            ),
+          )
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
