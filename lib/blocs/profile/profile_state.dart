@@ -1,5 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
 part of 'profile_cubit.dart';
 
 enum ProfileStatus {
@@ -13,7 +11,6 @@ class ProfileState extends Equatable {
   final ProfileStatus profileStatus;
   final User user;
   final CustomError error;
-
   ProfileState({
     required this.profileStatus,
     required this.user,

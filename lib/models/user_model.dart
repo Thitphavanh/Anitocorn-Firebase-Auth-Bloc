@@ -1,11 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:equatable/equatable.dart';
 
-class User {
+class User extends Equatable {
   final String id;
   final String name;
   final String email;
-  final String profileIamge;
+  final String profileImage;
   final int point;
   final String rank;
 
@@ -13,7 +14,7 @@ class User {
     required this.id,
     required this.name,
     required this.email,
-    required this.profileIamge,
+    required this.profileImage,
     required this.point,
     required this.rank,
   });
@@ -25,7 +26,7 @@ class User {
       id: userDoc.id,
       name: userData!['name'],
       email: userData['email'],
-      profileIamge: userData['profileIamge'],
+      profileImage: userData['profileImage'],
       point: userData['point'],
       rank: userData['rank'],
     );
@@ -36,7 +37,7 @@ class User {
       id: '',
       name: '',
       email: '',
-      profileIamge: '',
+      profileImage: '',
       point: -1,
       rank: '',
     );
@@ -48,7 +49,7 @@ class User {
       id,
       name,
       email,
-      profileIamge,
+      profileImage,
       point,
       rank,
     ];
@@ -56,6 +57,6 @@ class User {
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, email: $email, profileIamge: $profileIamge, point: $point, rank: $rank)';
+    return 'User(id: $id, name: $name, email: $email, profileImage: $profileImage, point: $point, rank: $rank)';
   }
 }

@@ -27,7 +27,7 @@ class AuthRepository {
       );
       final signedInUser = userCredential.user!;
 
-      await userRef.doc(signedInUser.uid).set({
+      await usersRef.doc(signedInUser.uid).set({
         'name': name,
         'email': email,
         'profileImage': 'https://picsum.photos/300',
