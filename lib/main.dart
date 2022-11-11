@@ -1,5 +1,4 @@
 import 'package:anitocorn_firebase_auth_bloc/blocs/profile/profile_cubit.dart';
-import 'package:anitocorn_firebase_auth_bloc/repositories/auth_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';

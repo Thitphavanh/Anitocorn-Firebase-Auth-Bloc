@@ -5,6 +5,7 @@ import 'package:validators/validators.dart';
 import '../blocs/auth.dart';
 import '../blocs/signup/signup_cubit.dart';
 import '../blocs/signup/signup_cubit.dart';
+import '../config/my_theme.dart';
 import '../utils/error_dialog.dart';
 import 'pages.dart';
 
@@ -54,6 +55,7 @@ class _SignupPageState extends State<SignupPage> {
         },
         builder: (context, state) {
           return Scaffold(
+            backgroundColor: Colors.grey[200],
             body: Center(
               child: Form(
                 key: formKey,
@@ -121,29 +123,59 @@ class _SignupPageState extends State<SignupPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
+          // width: 250.0,
+          height: 50.0,
+          decoration: _boxDecoration(),
           margin: const EdgeInsets.only(top: 8.0),
           // padding: const EdgeInsets.only(left: 20.0),
           width: size * 0.9,
-          child: ElevatedButton(
+          child: TextButton(
             onPressed:
                 state.signupStatus == SignupStatus.submitting ? null : submit,
-            child: Text(state.signupStatus == SignupStatus.submitting
-                ? 'Loading...'
-                : 'Sign Up'),
-            style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
+            child: Text(
+              state.signupStatus == SignupStatus.submitting
+                  ? 'Loading...'
+                  : 'Sign Up',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 25.0,
+                fontWeight: FontWeight.w700,
               ),
-              backgroundColor: Colors.blueAccent.shade400,
-              textStyle: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-              padding: const EdgeInsets.symmetric(vertical: 10.0),
             ),
+            // style: ElevatedButton.styleFrom(
+            //   shape: RoundedRectangleBorder(
+            //     borderRadius: BorderRadius.circular(8.0),
+            //   ),
+            //   backgroundColor: Colors.black,
+            //   textStyle: TextStyle(
+            //     color: Colors.white,
+            //     fontSize: 20.0,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            //   padding: const EdgeInsets.symmetric(vertical: 10.0),
+            // ),
           ),
         ),
       ],
+    );
+  }
+
+  BoxDecoration _boxDecoration() {
+    final colors = MyTheme.blackColor;
+
+    boxShadowItem(Color color) => BoxShadow(
+          color: color,
+          blurRadius: 10.0,
+        );
+
+    return BoxDecoration(
+      borderRadius: const BorderRadius.all(
+        Radius.circular(5.0),
+      ),
+      boxShadow: [
+        boxShadowItem(colors),
+      ],
+      color: colors,
     );
   }
 

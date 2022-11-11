@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
+  final double horizontalPadding = 40;
+  final double verticalPadding = 25;
 
   const CustomAppBar({
     Key? key,
@@ -46,7 +48,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
             );
           },
           icon: Icon(
-            Icons.account_circle,
+            Icons.person,
             color: Colors.black,
           ),
         ),

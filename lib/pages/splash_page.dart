@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../blocs/auth.dart';
 
+
 class SplashPage extends StatelessWidget {
   static const String routeName = '/';
   const SplashPage({super.key});

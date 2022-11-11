@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:validators/validators.dart';
 
 import '../blocs/signin/signin_cubit.dart';
+import '../config/my_theme.dart';
 import '../utils/utils.dart';
 
 class SigninPage extends StatefulWidget {
@@ -50,6 +51,7 @@ class _SigninPageState extends State<SigninPage> {
           builder: (context, state) {
             double size = MediaQuery.of(context).size.width;
             return Scaffold(
+              backgroundColor: Colors.grey[200],
               body: Center(
                 child: Form(
                   key: formKey,
@@ -114,28 +116,57 @@ class _SigninPageState extends State<SigninPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-           margin: const EdgeInsets.only(top: 8.0),
+          margin: const EdgeInsets.only(top: 8.0),
           width: size * 0.9,
-          child: ElevatedButton(
+          // width: 250.0,
+          height: 50.0,
+          decoration: _boxDecoration(),
+          child: TextButton(
             onPressed:
                 state.signinStatus == SigninStatus.submitting ? null : submit,
-            child: Text(state.signinStatus == SigninStatus.submitting
-                ? 'Loading...'
-                : 'Sign In'),
-            style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
+            child: Text(
+              state.signinStatus == SigninStatus.submitting
+                  ? 'Loading...'
+                  : 'Sign In',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 25.0,
+                fontWeight: FontWeight.w700,
               ),
-              backgroundColor: Colors.blueAccent.shade400,
-              textStyle: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-              padding: const EdgeInsets.symmetric(vertical: 10.0),
             ),
+            // style: TextButton.styleFrom(
+            //   shape: RoundedRectangleBorder(
+            //     borderRadius: BorderRadius.circular(8.0),
+            //   ),
+            //   backgroundColor: Colors.black,
+            //   textStyle: TextStyle(
+            //     fontSize: 20.0,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            //   padding: const EdgeInsets.symmetric(vertical: 10.0),
+            // ),
           ),
         ),
       ],
+    );
+  }
+
+  BoxDecoration _boxDecoration() {
+    final colors = MyTheme.blackColor;
+
+    boxShadowItem(Color color) => BoxShadow(
+          color: color,
+          blurRadius: 10.0,
+        );
+
+    return BoxDecoration(
+      borderRadius: const BorderRadius.all(
+        Radius.circular(5.0),
+      ),
+      boxShadow: [
+        boxShadowItem(colors),
+      ],
+      color: colors,
     );
   }
 
@@ -203,8 +234,8 @@ class _SigninPageState extends State<SigninPage> {
 
   Image buildImage() {
     return Image.network(
-      'https://www.pngmart.com/files/21/Internet-Of-Things-IOT-Vector-PNG-Picture.png',
-      // 'https://www.nicepng.com/png/full/428-4288965_internet-of-things-iot-sensor.png',
+      // 'https://www.pngmart.com/files/21/Internet-Of-Things-IOT-Vector-PNG-Picture.png',
+      'https://cdn-icons-png.flaticon.com/512/2922/2922393.png',
       // 'https://www.alifitsolutions.com/public/user/images/IOT%20(1).png',
       width: 300,
       height: 300,
@@ -262,6 +293,29 @@ class _SigninPageState extends State<SigninPage> {
           ),
         ),
       ],
+    );
+  }
+
+  Card _buildCardForm() {
+    return Card(
+      margin: const EdgeInsets.only(
+        bottom: 22.0,
+        left: 22.0,
+        right: 22.0,
+      ),
+      elevation: 2.0,
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: const Padding(
+        padding: EdgeInsets.only(
+          top: 20.0,
+          bottom: 50.0,
+          left: 28.0,
+          right: 28.0,
+        ),
+      ),
     );
   }
 }
