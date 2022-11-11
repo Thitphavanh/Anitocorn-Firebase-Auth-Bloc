@@ -235,8 +235,8 @@ class _SigninPageState extends State<SigninPage> {
   Image buildImage() {
     return Image.network(
       // 'https://www.pngmart.com/files/21/Internet-Of-Things-IOT-Vector-PNG-Picture.png',
-      'https://cdn-icons-png.flaticon.com/512/2922/2922393.png',
-      // 'https://www.alifitsolutions.com/public/user/images/IOT%20(1).png',
+      'https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1665445021/Croma%20Assets/Entertainment/Speakers%20and%20Media%20Players/Images/230158_0_mfaqmn.png/mxw_640,f_auto',
+      // 'https://media.croma.com/image/upload/v1665444968/Croma%20Assets/Entertainment/Speakers%20and%20Media%20Players/Images/230159_0_kvbjt5.png',
       width: 300,
       height: 300,
     );

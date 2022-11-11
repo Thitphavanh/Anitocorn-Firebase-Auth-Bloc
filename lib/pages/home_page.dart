@@ -17,13 +17,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final double horizontalPadding = 40;
-  final double verticalPadding = 25;
+  final double verticalPadding = 15;
 
   List mySmartDevices = [
     ["Smart Light", "assets/icons/light-bulb.png", true],
     ["Smart AC", "assets/icons/air-conditioner.png", true],
     ["Smart TV", "assets/icons/smart-tv.png", false],
-    ["Smart Fan", "assets/icons/fan.png", false],
+    ["Smart Car", "assets/icons/car.png", false],
   ];
 
   void powerSwitchChanged(bool value, int index) {
@@ -44,42 +44,47 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: horizontalPadding,
-                vertical: verticalPadding,
+                vertical: 15.0,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return ProfilePage();
-                          },
-                        ),
-                      );
-                    },
-                    icon: Icon(
-                      Icons.person,
-                      size: horizontalPadding,
-                      color: Colors.black,
-                    ),
+                  Image.asset(
+                    'assets/icons/menu.png',
+                    height: 40.0,
+                    color: Colors.black,
                   ),
                   IconButton(
                     onPressed: () {
-                      context.read<AuthBloc>().add(SignoutRequestedEvent());
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return ProfilePage();
+                      //     },
+                      //   ),
+                      // );
                     },
                     icon: Icon(
-                      size: horizontalPadding,
-                      Icons.exit_to_app,
+                      Icons.settings,
+                      size: 40.0,
                       color: Colors.black,
                     ),
                   ),
+                  // IconButton(
+                  //   onPressed: () {
+                  //     context.read<AuthBloc>().add(SignoutRequestedEvent());
+                  //   },
+                  //   icon: Icon(
+                  //     size: horizontalPadding,
+                  //     Icons.exit_to_app,
+                  //     color: Colors.black,
+                  //   ),
+                  // ),
                 ],
               ),
             ),
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 10.0),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: Column(
@@ -102,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            const SizedBox(height: 25.0),
+            const SizedBox(height: 10.0),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
               child: Divider(
@@ -110,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                 thickness: 1,
               ),
             ),
-            const SizedBox(height: 25.0),
+            const SizedBox(height: 10.0),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
               child: Text(

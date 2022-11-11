@@ -1,4 +1,5 @@
 import 'package:anitocorn_firebase_auth_bloc/pages/pages.dart';
+import 'package:anitocorn_firebase_auth_bloc/screens/custom_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,7 +29,7 @@ class SplashPage extends StatelessWidget {
             },
           );
         } else if (state.authStatus == AuthStatus.authenticated) {
-          Navigator.pushNamed(context, HomePage.routeName);
+          Navigator.pushNamed(context, CustomerScreen.routeName);
         }
       },
       builder: (context, state) {

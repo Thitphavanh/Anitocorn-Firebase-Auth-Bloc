@@ -385,7 +385,7 @@ class _SignupPageState extends State<SignupPage> {
 
   Image buildImage() {
     return Image.network(
-      'https://www.pngmart.com/files/21/Internet-Of-Things-IOT-Vector-PNG-Picture.png',
+      'https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1665445021/Croma%20Assets/Entertainment/Speakers%20and%20Media%20Players/Images/230158_0_mfaqmn.png/mxw_640,f_auto',
       // 'https://www.nicepng.com/png/full/428-4288965_internet-of-things-iot-sensor.png',
       // 'https://www.alifitsolutions.com/public/user/images/IOT%20(1).png',
       width: 300,

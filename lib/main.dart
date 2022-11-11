@@ -1,4 +1,5 @@
 import 'package:anitocorn_firebase_auth_bloc/blocs/profile/profile_cubit.dart';
+import 'package:anitocorn_firebase_auth_bloc/screens/custom_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -71,6 +72,8 @@ class MyApp extends StatelessWidget {
             SignupPage.routeName: (context) => SignupPage(),
             SigninPage.routeName: (context) => SigninPage(),
             HomePage.routeName: (context) => HomePage(),
+            CustomerScreen.routeName: (context) => CustomerScreen(),
+            ProfilePage.routeName: (context) => ProfilePage(),
           },
         ),
       ),
