@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                     'PHENOMENAL INC.',
                     style: GoogleFonts.bebasNeue(
                       fontSize: 52.0,
-                      color: Colors.red[600],
+                      color: Colors.grey[900],
                     ),
                   ),
                 ],
@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
               child: Divider(
-                color: Colors.red[600],
+                color: Colors.grey[800],
                 thickness: 1,
               ),
             ),
